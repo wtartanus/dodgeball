@@ -3,9 +3,11 @@ require( 'pry-byebug' )
 require_relative( 'db/sql_runner.rb' )
 require_relative( 'models/team.rb' )
 require_relative( 'models/match.rb' )
+require_relative( 'models/league.rb' )
 
-Team.delete_all()
 Match.delete_all()
+Team.delete_all()
+
 
 team1 = Team.new( { 'name' => 'Wizards'} )
 team2 = Team.new( { 'name' => 'Heat'} )
@@ -33,5 +35,30 @@ m2 = match2.save()
 m3 = match3.save()
 m4 = match4.save()
 
+match = Match.all
+match = League.new( match )
+
+
 binding.pry
 nil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
